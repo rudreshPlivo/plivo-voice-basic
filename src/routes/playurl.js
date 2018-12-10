@@ -17,4 +17,6 @@ router.post('/',(req,res,next)=> {
         console.log(`something went wrong with answer url error - ${error}`);
         next(error);
     }
-})
+});
+
+export default router;

@@ -4,6 +4,7 @@ import morgan from "morgan";
 import path from "path";
 import bodyParser from "body-parser";
 import makecall from "./routes/makecall";
+import playurl from "./routes/playurl";
 
 const app = express();
 const PORT = env.PORT;
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 
 //routes
 app.use('/makecall',makecall);
+app.use('/playurl',playurl);
 
 //static folder 
 const staticpath = path.join(__dirname,'./../static');
