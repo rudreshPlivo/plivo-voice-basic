@@ -22,9 +22,15 @@ router.post('/',(req,res,next) => {
         )
         .then((response) => {
             console.log(`Success: response from plivo is - ${response}`);
+            res.json({
+                msg: "call initiated"
+            });
         })
         .catch((err) => {
             console.log(`something went wrong with plivo - ${err}`);
+            res.json({
+                error: err
+            });
         });
     } catch (error) {
         
