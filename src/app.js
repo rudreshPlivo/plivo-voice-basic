@@ -20,13 +20,15 @@ app.use(morgan("combined"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//routes
-app.use('/makecall',makecall);
-app.use('/playurl',playurl);
 
 //static folder 
 const staticpath = path.join(__dirname,'./../static');
 app.use(express.static(staticpath));
+
+//routes
+app.use('/makecall',makecall);
+app.use('/playurl',playurl);
+
 
 //handle root path
 

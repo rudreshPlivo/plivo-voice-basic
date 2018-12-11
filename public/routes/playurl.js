@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _express = require("express");
 
 var _express2 = _interopRequireDefault(_express);
@@ -19,6 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express2.default.Router();
 
 router.post('/', function (req, res, next) {
+    console.log("gets called");
     var response = plivo.Response();
     var speakBody = "This call will be terminated in next few seconds";
     response.addSpeak(speakBody);
@@ -32,4 +37,6 @@ router.post('/', function (req, res, next) {
         next(error);
     }
 });
+
+exports.default = router;
 //# sourceMappingURL=playurl.js.map

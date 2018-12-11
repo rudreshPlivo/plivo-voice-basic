@@ -24,6 +24,10 @@ var _makecall = require("./routes/makecall");
 
 var _makecall2 = _interopRequireDefault(_makecall);
 
+var _playurl = require("./routes/playurl");
+
+var _playurl2 = _interopRequireDefault(_playurl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
@@ -40,12 +44,13 @@ app.use((0, _morgan2.default)("combined"));
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_bodyParser2.default.json());
 
-//routes
-app.use('/makecall', _makecall2.default);
-
 //static folder 
 var staticpath = _path2.default.join(__dirname, './../static');
 app.use(_express2.default.static(staticpath));
+
+//routes
+app.use('/makecall', _makecall2.default);
+app.use('/playurl', _playurl2.default);
 
 //handle root path
 
