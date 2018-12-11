@@ -8,7 +8,7 @@ router.post('/',(req,res,next) => {
     //call api
     console.log(JSON.stringify(req.body));
     
-    var callData = req.body;
+    var callData = JSON.stringify(req.body);
     console.log(`calldata is ${callData}`);
     var toNumber = callData.toNumber;
     var fromNumber = callData.fromNumber;
