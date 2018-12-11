@@ -8,10 +8,10 @@ router.post('/',(req,res,next) => {
     //call api
     console.log(JSON.stringify(req.body));
     
-    var callData = JSON.stringify(req.body);
+    var callData = req.body;
     console.log(`calldata is ${callData}`);
-    var toNumber = callData.toNumber;
-    var fromNumber = callData.fromNumber;
+    let toNumber = callData.toNumber;
+    let fromNumber = callData.fromNumber;
     var answerUrl = `https://pl-voice.herokuapp.com/playurl`;
 
     try {
