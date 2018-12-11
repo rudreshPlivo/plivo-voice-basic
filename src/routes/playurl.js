@@ -5,6 +5,7 @@ import * as plivo from "plivo";
 const router = express.Router();
 
 router.post('/',(req,res,next)=> {
+    console.log(`gets called`);
     var response = plivo.Response();
     var speakBody = `This call will be terminated in next few seconds`;
     response.addSpeak(speakBody);
