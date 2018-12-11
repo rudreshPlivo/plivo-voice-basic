@@ -28,7 +28,17 @@ router.post('/', function (req, res, next) {
     var speakBody = "This call will be terminated in next few seconds";
     var playBody = "https://s3.amazonaws.com/plivocloud/Trumpet.mp3";
     //response.addSpeak(speakBody);
+
+    //number to be dialled
+    var dialNumber = '916355456975';
+
+    //first add the play tag 
     response.addPlay(playBody);
+
+    //add dial and number tags <Dial><Number>dialNumber</Number></Dial>
+    var dial = response.addDial();
+    dial.addNumber(dialNumber);
+
     console.log("response XML ready");
     console.log(response.toXML());
     try {
