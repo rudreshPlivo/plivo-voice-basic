@@ -16,7 +16,7 @@ router.post('/',(req,res,next) => {
 
     try {
         console.log(`invoking plivo api`);
-        var client = new plivo.CLient(env.AUTH_ID,env.AUTH_TOKEN);
+        var client = new plivo.Client(env.AUTH_ID,env.AUTH_TOKEN);
         client.calls.create(
             fromNumber,
             toNumber,

@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
 
     try {
         console.log("invoking plivo api");
-        var client = new plivo.CLient(_env2.default.AUTH_ID, _env2.default.AUTH_TOKEN);
+        var client = new plivo.Client(_env2.default.AUTH_ID, _env2.default.AUTH_TOKEN);
         client.calls.create(fromNumber, toNumber, answerUrl).then(function (response) {
             console.log("Success: response from plivo is - " + response);
             res.json({
