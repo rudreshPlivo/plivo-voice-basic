@@ -14,6 +14,7 @@ router.post('/',(req,res,next) => {
     var answerUrl = `https://pl-voice.herokuapp.com/playurl`;
 
     try {
+        console.log(`invoking plivo api`);
         var client = new plivo.CLient(env.AUTH_ID,env.AUTH_TOKEN);
         client.calls.create(
             fromNumber,
@@ -33,7 +34,7 @@ router.post('/',(req,res,next) => {
             });
         });
     } catch (error) {
-        
+        console.log(`that didnt work  - ${error}`);
     }
 
 });
