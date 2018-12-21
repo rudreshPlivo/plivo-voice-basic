@@ -25,12 +25,12 @@ var router = _express2.default.Router();
 router.post('/', function (req, res, next) {
     console.log("xml request called");
     var response = plivo.Response();
-    var speakBody = "please wait while we connect you to doctor";
+    var speakBody = "please wait while we connect you to patient";
     var playBody = "https://s3.amazonaws.com/plivocloud/Trumpet.mp3";
     //response.addSpeak(speakBody);
 
     //number to be dialled
-    var dialNumber = '919825082101';
+    var dialNumber = '919825069909';
 
     //first add the play tag 
     //response.addPlay(playBody);
