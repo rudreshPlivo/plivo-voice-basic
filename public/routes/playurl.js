@@ -33,7 +33,10 @@ router.post('/', function (req, res, next) {
     var dialNumber = '919825082101';
 
     //first add the play tag 
-    response.addPlay(playBody);
+    //response.addPlay(playBody);
+
+    //add speak tag
+    response.addSpeak(speakBody);
 
     //add dial and number tags <Dial><Number>dialNumber</Number></Dial>
     var dial = response.addDial();
